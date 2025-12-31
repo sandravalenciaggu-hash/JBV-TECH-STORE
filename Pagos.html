@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JBV Tech Store - Pagos</title>
+  <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body >
+
+  <!-- Encabezado -->
+  <header>
+  <div class="navbar">
+    <a href="index.html">
+      <img src="imags/logo.png" alt="logo JBV Tech Store" class="logo">
+    </a>
+    <nav aria-label="Menú principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Servicios.html">Servicios</a></li>
+                <li><a href="Vender.html">Vender producto</a></li>
+                <li><a href="Nosotros.html">Nosotros & Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- Sección Pagos -->
+  <main class="productos-page">
+  <section class="vender">
+    <h2>
+      <span class="material-symbols-outlined">payments</span>
+      Procesa tu pago en JBV Tech Store
+    </h2>
+    <p>
+      Completa el formulario para realizar tu pago de manera rápida y segura.
+    </p>
+
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+      </div>
+
+      <div class="form-group">
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="direccion">Dirección de entrega:</label>
+        <input type="text" id="direccion" name="direccion" placeholder="Ej: Calle 123 #45-67, Bogotá" required>
+      </div>
+
+      <div class="form-group">
+        <label for="metodo">Método de pago:</label>
+        <select id="metodo" name="metodo" required>
+          <option value="">Selecciona una opción</option>
+          <option value="tarjeta">Tarjeta de crédito / débito</option>
+          <option value="pse">Transferencia PSE</option>
+          <option value="nequi">Nequi / Daviplata</option>
+          <option value="contraentrega">Pago contra entrega</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="tarjeta">Número de tarjeta:</label>
+        <input type="text" id="tarjeta" name="tarjeta" maxlength="16" placeholder="XXXX-XXXX-XXXX-XXXX">
+      </div>
+
+      <div class="form-group">
+        <label for="expira">Fecha de expiración:</label>
+        <input type="text" id="expira" name="expira" maxlength="5" placeholder="MM/AA">
+      </div>
+
+      <div class="form-group">
+        <label for="cvv">CVV:</label>
+        <input type="password" id="cvv" name="cvv" maxlength="3" placeholder="***">
+      </div>
+
+      <button type="submit">Realizar Pago</button>
+    </form>
+  </section>
+</main>
+
+  <!-- Footer -->
+  <footer>
+  <p>&copy; 2025 JBV Tech Store. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>

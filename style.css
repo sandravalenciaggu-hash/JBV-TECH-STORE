@@ -1,0 +1,736 @@
+/* ===========================
+   Estilos generales del sitio
+=========================== */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #29A19C; /* Fondo general verde */
+  color: #27323A;
+  margin: 0;
+  padding: 0;
+}
+
+h2, h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+p, li {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+header, footer, .banner {
+  max-width: 1900px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 1rem;
+}
+
+/* ===========================
+   Header y navegación
+=========================== */
+header {
+  background-color: #27323A; /* Azul oscuro */
+  padding: 10px 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 200px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #A3F7BF;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #29A19C;
+}
+
+/* ===========================
+   Banner principal
+=========================== */
+.banner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #27323A, #435055);
+  color: #A3F7BF;
+  padding: 2rem 1rem;
+}
+
+.banner img {
+  width: 200px;
+  margin-bottom: 15px;
+}
+
+.banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #29A19C;
+}
+
+.banner p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  color: #fff;
+}
+
+/* ===== Buscador Principal ===== */
+.buscador-principal {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  max-width: 800px;   /* ancho máximo */
+  width: 90%;         /* se adapta a pantallas pequeñas */
+}
+
+.buscador {
+  display: flex;
+  width: 100%;
+}
+
+.buscador input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border-radius: 30px 0 0 30px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.buscador button {
+  padding: 0.8rem 1.2rem;
+  border-radius: 0 30px 30px 0;
+  border: none;
+  background-color: #29A19C; /* verde azulado */
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem; /* controla el tamaño del ícono */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+.buscador button:hover {
+  background-color: #A3F7BF; /* verde claro */
+  color: #27323A;           /* azul oscuro */
+}
+
+/* ===========================
+   Footer
+=========================== */
+footer {
+  background-color: #27323A;
+  color: #A3F7BF;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+/* ===========================
+   Vista: Inicio (destacados + carrusel)
+=========================== */
+.destacados-container {
+  padding: 2rem;
+  background-color: transparent;
+  color: #27323A;
+  text-align: center;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.productos-grid article {
+  background-color: #27323A;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+   border: 2px solid transparent; /* borde invisible normalmente */
+}
+
+.productos-grid article:hover {
+  transform: translateY(-5px); /* efecto de levantar la tarjeta */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  border: 2px solid #29A19C;   /* borde verde */
+  background-color: rgba(41, 161, 156, 0.1); /* verde muy suave de fondo */
+}
+.productos-grid article:hover h3 {
+  color: #27323A; /* azul oscuro para que no se pierda */
+}
+.productos-grid article.destacado::before {
+  content: "Lo más destacado";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #A3F7BF;
+  color: #27323A;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  z-index: 10;
+  border: 1px solid #29A19C;
+}
+
+.productos-grid article img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.productos-grid article h3 {
+  color: #29A19C;
+  margin: 0.5rem 0;
+}
+
+.productos-grid article p,
+.productos-grid article ul li {
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.productos-grid article ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.productos-grid article button {
+  background-color: #29A19C;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.productos-grid article button:hover {
+  background-color: #A3F7BF;
+  color: #27323A;
+}
+
+.precio {
+  font-weight: bold;
+  color: #A3F7BF;
+  margin-top: 0.5rem;
+}
+/* Carrusel simple index */
+.link-producto {
+  text-decoration: none; /* quita subrayado */
+  color: inherit;        /* usa el mismo color del texto */
+  display: block;        /* para que abarque todo el article */
+}
+.link-producto:visited {
+  color: inherit; /* evita el morado de enlaces visitados */
+}
+.link-producto:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  border: 1px solid #A3F7BF;
+  display: block; 
+}
+
+/* ===========================
+   Vista: Productos
+=========================== */
+.productos-page {
+  background-color: #435055;
+  padding: 2rem;
+  max-width: 1900px;   /* igual que header, banner y footer */
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.productos-row {
+  display: grid;
+ grid-template-columns: 60px 1fr 1fr 60px; /* flechas + 2 productos */
+  gap: 2rem;
+  align-items: start;   /* los productos alineados arriba */
+  margin-bottom: 2rem;
+   justify-content: center; /* fuerza a que se centre */
+}
+
+.producto {
+  background-color: #27323A; /* azul oscuro */
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 950px;   /* más ancho que antes */
+  min-width: 400px;   /* evita que se encoja demasiado */
+  margin: 0 auto;
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.imagenes-producto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  overflow: visible;
+  min-height: 250px;
+  position: relative;
+  z-index: 1;
+}
+
+.imagenes-producto img {
+   max-width: 100%;
+  max-height: 180px;   /* un poco más bajo */
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  z-index: 2;
+
+  cursor: pointer;
+}
+
+.imagenes-producto img:hover {
+  transform: scale(1.5); /* menos agresivo que 2 */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 3;
+
+}
+
+.producto h3 {
+  color: #A3F7BF;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+
+.productos-page h2 {
+  color: #A3F7BF;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+
+.producto ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.producto ul li {
+  font-size: 0.95rem;
+}
+
+.precio {
+  font-weight: bold;
+  color: #29A19C;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.btn-comprar {
+  background-color: #29A19C;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  align-self: center;
+}
+
+.btn-comprar:hover {
+  background-color: #A3F7BF;
+  color: #27323A;
+}
+
+/* ===========================
+   Flechas de navegación productos
+=========================== */
+.nav-row {
+  font-size: 3rem;       /* más grandes */
+  color: #A3F7BF;
+  cursor: pointer;
+  align-self: center;    /* centra verticalmente en el grid */
+  justify-self: center;  /* centra horizontalmente */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-row:hover {
+  transform: scale(1.2);
+  color: #29A19C;
+}
+
+/* ===========================
+   Vista: Servicios
+=========================== */
+.servicios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  background-color: #435055;
+}
+
+.servicio-card {
+  background-color: #27323A;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+  flex: 1 1 300px;
+}
+
+.servicio-card:hover {
+  transform: translateY(-5px);
+}
+
+.servicio-card img {
+  width: 100%;
+  display: block;
+}
+
+.contenido {
+  padding: 20px;
+  color: white;
+}
+
+.contenido h3 {
+  color: #A3F7BF;
+  margin-bottom: 10px;
+}
+
+.contenido p {
+  font-size: 0.95em;
+  margin-bottom: 20px;
+  color: #E0E0E0;
+}
+
+.contenido button {
+  background-color: #29A19C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contenido button:hover {
+  background-color: #A3F7BF;
+  color: #27323A;
+}
+
+/* ===========================
+   Vista: Nosotros
+=========================== */
+.nosotros {
+  background-color: #435055;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.nosotros h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #A3F7BF;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #27323A;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card span {
+  font-size: 40px;
+  color: #29A19C;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  color: #A3F7BF;
+  margin-bottom: 10px;
+}
+
+/* ===========================
+   Vista: Contacto
+=========================== */
+.contacto {
+  background-color: #435055;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contacto h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #A3F7BF;
+}
+
+.contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.contacto input,
+.contacto textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #27323A;
+  color: white;
+  font-size: 1em;
+}
+
+.contacto input::placeholder,
+.contacto textarea::placeholder {
+  color: #A3F7BF;
+}
+
+.contacto button {
+  background-color: #29A19C;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.contacto button:hover {
+  background-color: #A3F7BF;
+  color: #27323A;
+}
+
+.redes-sociales {
+  margin-top: 30px;
+  text-align: center;
+  color: #A3F7BF;
+}
+
+.redes-sociales p {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.redes-sociales a {
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.redes-sociales i {
+  font-size: 36px;
+  color: #29A19C;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.redes-sociales a:hover i {
+  color: #A3F7BF;
+  transform: scale(1.2);
+}
+
+/* ===========================
+   Vista: Vender
+=========================== */
+.vender {
+  background-color: #435055;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.vender h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #A3F7BF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.vender p {
+  margin-bottom: 0px;
+  font-size: 1.1em;
+  color: #E0E0E0;
+}
+
+.vender form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  background-color: #27323A;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #E0E0E0;
+  font-size: 0.95em;
+}
+
+.vender input,
+.vender select,
+.vender textarea {
+  width: calc(100% - 20px); /* resta un poco para que encaje dentro del padding */
+  padding: 10px;
+  border: 1px solid #29A19C;
+  border-radius: 5px;
+  background-color: #2F3A45;
+  color: white;
+  font-size: 1em;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.vender input::placeholder,
+.vender textarea::placeholder {
+  color: #A3F7BF;
+}
+
+.vender button {
+  background-color: #29A19C;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.vender button:hover {
+  background-color: #A3F7BF;
+  color: #27323A;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined', sans-serif;
+  font-size: 28px;
+  vertical-align: middle;
+  color: #29A19C;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+@media (max-width: 768px) {
+  header, footer, .banner {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .productos-page .productos-row {
+    grid-template-columns: 1fr;
+  }
+
+  .imagenes-producto {
+    flex-direction: column;
+  }
+
+  .imagenes-producto img {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner h1 {
+    font-size: 1.8rem;
+  }
+
+  .banner p {
+    font-size: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+  }
+}
+

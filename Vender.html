@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>JBV Tech Store - Productos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explora el catálogo de productos tecnológicos de JBV Tech Store: laptops, accesorios, computadores de escritorio y más.">
+    <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="index.html">
+                <img src="imags/logo.png" alt="logo JBV Tech Store" class="logo">
+            </a>
+            <nav aria-label="Menú principal">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Servicios.html">Servicios</a></li>
+                <li><a href="Vender.html">Vender producto</a></li>
+                <li><a href="Nosotros.html">Nosotros & Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+  <!-- Sección Vender Producto -->
+  <main class="productos-page">
+     <section class="vender">
+    <h2>
+      <span class="material-symbols-outlined">sell</span>
+      Vende tu producto a JBV Tech Store
+    </h2>
+    <p>
+      ¿Tienes productos tecnológicos que deseas ofrecernos? Completa el formulario y nuestro equipo evaluará tu propuesta.
+    </p>
+
+    <form action="#" method="post">
+
+      <div class="form-group">
+        <label for="producto">Nombre del producto:</label>
+        <input type="text" id="producto" name="producto" placeholder="Ej: Monitor LG 24''" required>
+      </div>
+
+       <!-- Categoría -->
+      <div class="form-group">
+        <label for="categoria">Categoría del producto:</label>
+        <select id="categoria" name="categoria" required>
+          <option value="">Selecciona una opción</option>
+          <option value="laptops">Laptops</option>
+          <option value="accesorios">Accesorios</option>
+          <option value="casa-inteligente">Casa Inteligente</option>
+          <option value="otros">Otros</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="estado">Estado del producto:</label>
+        <select id="estado" name="estado" required>
+          <option value="">Selecciona una opción</option>
+          <option value="nuevo">Nuevo</option>
+          <option value="usado">Usado</option>
+          <option value="reacondicionado">Reacondicionado</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="precio">Precio sugerido ($):</label>
+        <input type="number" id="precio" name="precio" min="1000"  step="1000" inputmode="numeric" placeholder="Ej: 850.000" required>
+      </div>
+
+      <div class="form-group">
+        <label for="descripcion">Descripción del producto:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" placeholder="Ej: Pantalla IPS, resolución Full HD, poco uso..." required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="imagenes">Imágenes del producto:</label>
+        <input type="file" id="imagenes" name="imagenes" multiple accept="image/*">
+      </div>
+
+      <div class="form-group">
+        <label for="contacto">Tu correo electrónico:</label>
+        <input type="email" id="contacto" name="contacto" placeholder="Ej: cliente@email.com" required>
+      </div>
+
+       <!-- Teléfono -->
+      <div class="form-group">
+        <label for="telefono">Número de contacto:</label>
+        <input 
+          type="tel" 
+          id="telefono" 
+          name="telefono" 
+          placeholder="Ej: 3001234567" 
+          required
+        >
+      </div>
+
+      <button type="submit">Enviar propuesta</button>
+
+    </form>
+
+  </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 JBV Tech Store. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
